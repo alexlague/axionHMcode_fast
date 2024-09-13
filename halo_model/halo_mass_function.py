@@ -42,7 +42,7 @@ def func_dlnsigma2_dlnM(M, k_sigma, PS_sigma, cosmo_dic, Omega_0, Omega_0_sigma)
 
     integrand = func_term_derivative_sigma2_M(R, k_sigma) * PS_sigma / k_sigma**2
     
-    return integrate.simps(y=integrand, x = k_sigma, axis=-1) * 3./ ( np.pi**2 * sigma**2 * R**4)
+    return integrate.simpson(y=integrand, x = k_sigma, axis=-1) * 3./ ( np.pi**2 * sigma**2 * R**4)
 
 
 def func_halo_mass_function(M, k_sigma, PS_sigma, cosmo_dic, Omega_0, Omega_0_sigma):
